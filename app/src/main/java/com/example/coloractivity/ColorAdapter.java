@@ -15,7 +15,7 @@ import com.example.coloractivity.R;
 import java.util.ArrayList;
 
 public class ColorAdapter extends ArrayAdapter {
-    public ColorAdapter(Context context, ArrayList<ColorItem> colorList) {
+    public ColorAdapter(Context context, ArrayList<String> colorList) {
         super(context, 0, colorList);
     }
 
@@ -39,10 +39,10 @@ public class ColorAdapter extends ArrayAdapter {
         convertView.setBackgroundColor(Color.WHITE);
         TextView textViewName = convertView.findViewById(R.id.text_view_name);
 
-        ColorItem currentItem = (ColorItem) getItem(position);
+        String currentItem = (String) getItem(position);
 
         if (currentItem != null) {
-            textViewName.setText(currentItem.getColorName());
+            textViewName.setText(currentItem);
         }
 
         return convertView;

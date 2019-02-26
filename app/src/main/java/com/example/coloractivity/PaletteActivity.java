@@ -1,6 +1,7 @@
 package com.example.coloractivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,11 +11,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PaletteActivity extends AppCompatActivity {
 
-    public ColorItem clickedItem;
-    private ArrayList<ColorItem> colorList;
+    public String clickedItem;
+    private ArrayList<String> colorList = new ArrayList<>();
     private ColorAdapter colorAdapter;
 
     @Override
@@ -32,8 +34,8 @@ public class PaletteActivity extends AppCompatActivity {
         spinnerColors.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                clickedItem = (ColorItem) parent.getItemAtPosition(position);
-                String clickedColorName = clickedItem.getColorName();
+                clickedItem = (String) parent.getItemAtPosition(position);
+                String clickedColorName = clickedItem;
                 View canvasView;
 
                 if (clickedColorName.equals("Red")) {
@@ -52,6 +54,26 @@ public class PaletteActivity extends AppCompatActivity {
                     setContentView(R.layout.activity_canvas);
                     canvasView = findViewById(R.id.canvas);
                     canvasView.setBackgroundColor(Color.YELLOW);
+                } else if (clickedColorName.equals("Green")) {
+                    setContentView(R.layout.activity_canvas);
+                    canvasView = findViewById(R.id.canvas);
+                    canvasView.setBackgroundColor(Color.GREEN);
+                } else if (clickedColorName.equals("Cyan")) {
+                    setContentView(R.layout.activity_canvas);
+                    canvasView = findViewById(R.id.canvas);
+                    canvasView.setBackgroundColor(Color.CYAN);
+                } else if (clickedColorName.equals("Gray")) {
+                    setContentView(R.layout.activity_canvas);
+                    canvasView = findViewById(R.id.canvas);
+                    canvasView.setBackgroundColor(Color.GRAY);
+                } else if (clickedColorName.equals("Magenta")) {
+                    setContentView(R.layout.activity_canvas);
+                    canvasView = findViewById(R.id.canvas);
+                    canvasView.setBackgroundColor(Color.MAGENTA);
+                } else if (clickedColorName.equals("Orange")) {
+                    setContentView(R.layout.activity_canvas);
+                    canvasView = findViewById(R.id.canvas);
+                    canvasView.setBackgroundColor(Color.rgb(255, 165, 0));
                 }
                 Toast.makeText(PaletteActivity.this, clickedColorName + " selected", Toast.LENGTH_SHORT).show();
             }
@@ -64,11 +86,11 @@ public class PaletteActivity extends AppCompatActivity {
     }
 
     private void initList() {
-        colorList = new ArrayList<>();
-        colorList.add(new ColorItem("White", Color.WHITE));
-        colorList.add(new ColorItem("Red", Color.RED));
-        colorList.add(new ColorItem("Black", Color.BLACK));
-        colorList.add(new ColorItem("Blue", Color.BLUE));
-        colorList.add(new ColorItem("Yellow", Color.YELLOW));
+        String [] cl = getResources().getStringArray(R.array.colors);
+
+        for(int i = 0; i < cl.length; i++)
+        {
+            this.colorList.add(i, cl[i]);
+        }
     }
 }
