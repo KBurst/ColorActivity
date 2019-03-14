@@ -15,4 +15,12 @@
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryDark" />
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.coloractivity.ColorFragment"
+        android:layout_width="421dp"
+        android:layout_height="357dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
 </android.support.constraint.ConstraintLayout>

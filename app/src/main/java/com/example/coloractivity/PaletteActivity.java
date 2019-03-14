@@ -30,7 +30,6 @@ public class PaletteActivity extends AppCompatActivity {
 
         colorAdapter = new ColorAdapter(this, colorList);
         spinnerColors.setAdapter(colorAdapter);
-        // Color.par
 
         spinnerColors.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -39,42 +38,32 @@ public class PaletteActivity extends AppCompatActivity {
                 String clickedColorName = clickedItem;
                 View canvasView;
 
-
                 if (clickedColorName.equals(colorList.get(1))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
+                    canvasView = findViewById(R.id.fragment);
                     canvasView.setBackgroundColor(Color.parseColor("Red"));
                 } else if (clickedColorName.equals(colorList.get(2))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
-                    canvasView.setBackgroundColor(Color.BLACK);
+                    canvasView = findViewById(R.id.fragment);
+                    canvasView.setBackgroundColor(Color.parseColor("Black"));
                 } else if (clickedColorName.equals(colorList.get(3))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
-                    canvasView.setBackgroundColor(Color.BLUE);
+                    canvasView = findViewById(R.id.fragment);
+                    canvasView.setBackgroundColor(Color.parseColor("Blue"));
                 } else if (clickedColorName.equals(colorList.get(4))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
-                    canvasView.setBackgroundColor(Color.YELLOW);
+                    canvasView = findViewById(R.id.fragment);
+                    canvasView.setBackgroundColor(Color.parseColor("Yellow"));
                 } else if (clickedColorName.equals(colorList.get(5))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
-                    canvasView.setBackgroundColor(Color.GREEN);
+                    canvasView = findViewById(R.id.fragment);
+                    canvasView.setBackgroundColor(Color.parseColor("Green"));
                 } else if (clickedColorName.equals(colorList.get(6))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
-                    canvasView.setBackgroundColor(Color.CYAN);
+                    canvasView = findViewById(R.id.fragment);
+                    canvasView.setBackgroundColor(Color.parseColor("Cyan"));
                 } else if (clickedColorName.equals(colorList.get(7))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
-                    canvasView.setBackgroundColor(Color.GRAY);
+                    canvasView = findViewById(R.id.fragment);
+                    canvasView.setBackgroundColor(Color.parseColor("Gray"));
                 } else if (clickedColorName.equals(colorList.get(8))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
-                    canvasView.setBackgroundColor(Color.MAGENTA);
+                    canvasView = findViewById(R.id.fragment);
+                    canvasView.setBackgroundColor(Color.parseColor("Magenta"));
                 } else if (clickedColorName.equals(colorList.get(9))) {
-                    setContentView(R.layout.activity_canvas);
-                    canvasView = findViewById(R.id.canvas);
+                    canvasView = findViewById(R.id.fragment);
                     canvasView.setBackgroundColor(Color.rgb(255, 165, 0));
                 }
                 Toast.makeText(PaletteActivity.this, clickedColorName + " selected", Toast.LENGTH_SHORT).show();
