@@ -7,26 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".PaletteActivity">
 
-    <Spinner
-        android:id="@+id/color_spinner"
-        android:layout_width="139dp"
-        android:layout_height="74dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryDark"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="0dp" />
-
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.coloractivity.ColorFragment"
         android:layout_width="421dp"
-        android:layout_height="218dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="361dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/color_spinner"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment2" />
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.coloractivity.PaletteFragment"
+        android:layout_width="417dp"
+        android:layout_height="301dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
